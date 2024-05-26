@@ -1,5 +1,6 @@
-# Toxic-Gases-Detector
+# ToxicGasesDetector
 *by Group 4*
+
 # How to Use
 
 # Software
