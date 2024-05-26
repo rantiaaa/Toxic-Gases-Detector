@@ -14,7 +14,7 @@ main:
 
 agn:
     IN    R21, PINC      ; Read the input from port C
-    MOV   R20, R21    ; Mask all but the least significant bit (PC0)
+    MOV   R20, R21    
     
     CPI   R20, 0x01      ; Compare the value of PC0 with 1
     BREQ  MAX7219_disp_text ; If PC0 is 1, branch to MAX7219_disp_text
@@ -47,29 +47,29 @@ SPI_MAX7219_init:
 MAX7219_disp_text:
     RCALL active
 
-    LDI   R17, 0x02       ;select digit 7
+    LDI   R17, 0x02       
     LDI   R18, 0b00111101       ;data = d
     RCALL send_bytes      ;send command & data to MAX7219
    
-    LDI   R17, 0x03       ;select digit 4
+    LDI   R17, 0x03       
     LDI   R18, 0b01111101      ;data = a
     RCALL send_bytes      ;send command & data to MAX7219
 
-    LDI   R17, 0x04       ;select digit 3
+    LDI   R17, 0x04       
     LDI   R18, 0b01110110       ;data = n
     RCALL send_bytes      ;send command & data to MAX7219
     
-    LDI   R17, 0x05       ;select digit 2
+    LDI   R17, 0x05       
     LDI   R18, 0b01111011       ;data = g
     RCALL send_bytes      ;send command & data to MAX7219
 
     LDI R17, 0x06
     LDI R18, 0b01101111   ; data = e
-    RCALL send_bytes
+    RCALL send_bytes    ;send command & data to MAX7219
 
     LDI R17, 0x07
     LDI R18, 0b01000110   ; data = r
-    RCALL send_bytes
+    RCALL send_bytes    ;send command & data to MAX7219
 
     RCALL delay_2s
     
@@ -77,27 +77,27 @@ MAX7219_disp_text:
 
 MAX7219_disp_text2:
     RCALL nonactive
-    LDI   R17, 0x02       ;select digit 7
+    LDI   R17, 0x02       
     LDI   R18, 0b00000001       ;data = -
     RCALL send_bytes      ;send command & data to MAX7219
 
     LDI R17, 0x03
     LDI R18, 0b01011011   ;data = S
-    RCALL send_bytes
+    RCALL send_bytes    ;send command & data to MAX7219
 
     LDI R17, 0x04
     LDI R18, 0b01110111     ;data = A
-    RCALL send_bytes
+    RCALL send_bytes    ;send command & data to MAX7219
     
     LDI R17, 0x05
     LDI R18, 0b01000111     ;data = F
-    RCALL send_bytes
+    RCALL send_bytes    ;send command & data to MAX7219
 
     LDI R17, 0x06
     LDI R18, 0b01001111     ;data = E
-    RCALL send_bytes
+    RCALL send_bytes    ;send command & data to MAX7219
 
-    LDI   R17, 0x07       ;select digit 7
+    LDI   R17, 0x07       
     LDI   R18, 0b00000001       ;data = -
     RCALL send_bytes      ;send command & data to MAX7219
 
@@ -122,30 +122,30 @@ ll3:
     RET
 
 active:
-    CBI   PORTB, SS       ;enable slave device MAX7219
+    CBI   PORTB, SS       ;enable slave device 
 
     SBI DDRB, 1            ; Set PB1 as output for fan
     SBI DDRB, 0            ; Set PB0 as output for buzzer
 
-    ;OUT   SPDR, R17       ;transmit command
+    ;OUT   SPDR, R17      ; transmit command
     SBI   PORTB, 0        ; Turn on buzzer
     SBI   PORTB, 1        ; Turn on fan
 
-    SBI   PORTB, SS       ;disable slave device MAX7219
+    SBI   PORTB, SS       ;disable slave device 
 
     RET
 
 nonactive:
-    CBI   PORTB, SS       ;enable slave device MAX7219
+    CBI   PORTB, SS       ;enable slave device 
 
     CBI DDRB, 1            ; Set PB1 as output for fan
     CBI DDRB, 0            ; Set PB0 as output for buzzer
 
-    SBI   PORTB, SS       ;disable slave device MAX7219
+    SBI   PORTB, SS       ;disable slave device
 
     RET
     
-delay_2s:                 ;delay 2s
+delay_2s:                 ;delay 1.5s
     LDI   R21, 200
 l6: LDI   R22, 255
 l7: LDI   R23, 164
