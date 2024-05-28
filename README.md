@@ -15,6 +15,7 @@
 
 ## i. Introduction to the Problem and the Solution
   Dalam era modern saat ini, keberadaan gas berbahaya dalam ruangan dapat menjadi ancaman serius bagi kesehatan manusia dan keamanan lingkungan. Gas-gas seperti LPG, karbon monoksida (CO), metana (CH4), propana, dan gas berbahaya lainnya sering kali tidak terdeteksi oleh indera manusia sehingga menimbulkan risiko tersembunyi. Oleh karena itu, diperlukan sebuah sistem yang dapat secara real-time mendeteksi keberadaan gas berbahaya dan mengambil tindakan pencegahan yang diperlukan untuk memastikan keselamatan.
+  
   Proyek ini bertujuan untuk mengembangkan sebuah sistem deteksi konsentrasi gas berbahaya dalam ruangan menggunakan sensor gas MQ. Sistem ini akan memantau konsentrasi gas secara kontinu dan jika konsentrasi gas melebihi ambang batas yang telah ditetapkan, indikator seperti buzzer akan menyala sebagai peringatan. Selain itu, untuk menampilkan tingkat konsentrasi gas yang terdeteksi, sistem akan menggunakan modul display MAX7219 yang terhubung melalui protokol komunikasi Serial Peripheral Interface (SPI). Sebagai langkah mitigasi tambahan, ketika terdeteksi konsentrasi gas berbahaya yang tinggi, sistem ini juga akan mengaktifkan exhaust fan untuk membuang gas berbahaya dari ruangan, sehingga membantu menjaga kualitas udara dan mengurangi potensi bahaya.
 
 ## ii. Hardware Design and Implementation Details
@@ -41,4 +42,5 @@
 ## v. Conclusion and Future Work
   Toxic Gases Detector yang dirancang sebagai pendeteksi gas berbahaya dalam ruangan ini melibatkan penggunaan sensor gas MQ-2 yang dapat mendeteksi kandungan gas berbahaya, seperti LPG, alkohol, asap, propana, hidrogen, metana, 
 maupun karbon monoksida di udara. Sensor ini mengambil data secara langsung dari udara dan mengirimkan data pembacaan tersebut ke Arduino Uno. Berdasarkan data yang telah diterima ini, Arduino akan melakukan analisis data, dimana apabila hasil yang didapat menunjukkan bahwa terdapat gas berbahaya yang terdeteksi, maka buzzer akan menyala sebagai indikator dan exhaust fan akan aktif untuk meminimalisir konsentrasi gas berbahaya di udara sekitar.
+  
   Dengan ini kami harapkan proyek Toxic Gases Detector dapat membantu masyarakat dalam tindak pencegahan terjadinya keracunan gas, maupun bencana kebakaran. Kami harap proyek kami dapat dipergunakan dengan baik, kemudian juga kami berharap bahwa Toxic Gases Detector dapat dikembangkan menjadi rangkaian yang lebih baik lagi.
