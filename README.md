@@ -16,7 +16,7 @@
 # Software
 ## 1. Arduino IDE
   Software ini digunakan untuk mengeksekusi kode Assembly yang telah dibuat, dimana kode dapat diupload dan dicompile ke Arduino Uno R3.
-  ![image](https://github.com/rantiaaa/Toxic-Gases-Detector/assets/87708733/29ccde7c-5377-4799-9f34-d658c753475a)
+  ![image](https://github.com/rantiaaa/Toxic-Gases-Detector/assets/87708733/32343e82-e458-4c07-a4d5-d847d033f425)
 ## 2. Proteus
   Software ini digunakan untuk membuat desain virtual dari rangkaian yang akan dibuat. Selain itu, dengan menghubungkan Proteus dengan kode pada Arduino IDE, rangkaian dapat disimulasikan dengan tepat sesuai dengan keinginan pengguna.
   ![image](https://github.com/rantiaaa/Toxic-Gases-Detector/assets/87708733/61f53bfb-bcff-4928-8e9a-951729766104)
@@ -29,7 +29,7 @@
   Suatu sensor yang dapat mendeteksi beberapa jenis gas berbahaya, seperti LPG, alkohol, asap, propana, hidrogen, metana, hingga karbon monoksida. Sensor ini dapat menghasilkan output analog maupun digital.
   ![image](https://github.com/rantiaaa/Toxic-Gases-Detector/assets/87708733/5aebbd15-6d53-4976-8644-9b75e004ced8)
 ## 3. 8-bit 7-Segment MAX7219
-  Komponen elektronik ini digunakan sebagai display status udara setelah dilakukan pendeteksian oleh sensor gas. MAX7219 sendiri merupakan IC yang digunakan untuk mengendalikan 8-bit 7-segmentt display menggunakan komunikasi SPI. Pada proyek kami, display ini dirancang untuk dapat menampilkan status "-SAFE-" ketika tidak ada gas berbahaya yang terdeteksi dan status "danger" ketika sensor gas mendeteksi adanya konsentrasi gas berbahaya di udara.
+  Komponen elektronik ini digunakan sebagai display status udara setelah dilakukan pendeteksian oleh sensor gas. Dengan menggunakan komunikasi SPI, 8-bit 7-segment display dikendalikan oleh IC MAX7219. Pada proyek kami, display ini dirancang untuk dapat menampilkan status "-SAFE-" ketika tidak ada gas berbahaya yang terdeteksi dan akan menampilkan status "danger" ketika sensor gas mendeteksi adanya konsentrasi gas berbahaya di udara.
   ![image](https://github.com/rantiaaa/Toxic-Gases-Detector/assets/87708733/73e99ed3-8fc2-4ee5-a726-83879de3c196)
 ## 4. HYDZ Piezo Buzzer
   Suatu komponen elektronik yang dapat menghasilkan suara ketika menerima sinyal elektrik. Buzzer ini umumnya digunakan sebagai alarm, khususnya pada proyek kami, buzzer dimanfaatkan sebagai indikator adanya gas berbahaya di udara.
